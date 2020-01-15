@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class LevelGenerator : MonoBehaviour
 {
+    public GameManager gm;
+    [Space]
     public float wallSegmentsCount;
     public GameObject wallSegmentPrefab;
     public Transform wallSegmentsHolder;
@@ -21,6 +23,8 @@ public class LevelGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        wallSegmentsCount += gm.currentLevel;
+
         InstantiateWalls();
         InstantiateObstacles();
         InstantiateFloor();
@@ -51,6 +55,6 @@ public class LevelGenerator : MonoBehaviour
 
     private void InstantiateFloor()
     {
-        Instantiate(floor, new Vector3(0, -wallSegmentsCount / 2 - 0.25f, 0), Quaternion.identity);
+        Instantiate(floor, new Vector3(0, -wallSegmentsCount / 2 - 0.15f, 0), Quaternion.identity);
     }
 }

@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
+    public GameManager gm;
+    [Space]
     public float movementForce;
     public float maxFallVelocity;
     public float maxFallVelocityIncrease;
@@ -49,5 +51,14 @@ public class PlayerController : MonoBehaviour
         }
 
     }
-    
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("End"))
+        {
+            PlayerPrefs.SetInt("Number", gm.currentLevel + 1);
+            SceneManager.LoadScene(0);
+        }
+    }
+
 }

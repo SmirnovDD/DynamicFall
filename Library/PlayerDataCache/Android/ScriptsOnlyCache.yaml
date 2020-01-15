@@ -2,8 +2,11 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - CameraFollow
+    - GameManager
+    - LevelGenerator
     - PlayerController
     - RegisterSwipe
+    - SawRotate
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
@@ -13,6 +16,12 @@ ScriptsOnlyBuild:
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
+    UnityEngine.UI.dll:
+    - UnityEngine.EventSystems.EventSystem
+    - UnityEngine.EventSystems.StandaloneInputModule
+    - UnityEngine.UI.CanvasScaler
+    - UnityEngine.UI.GraphicRaycaster
+    - UnityEngine.UI.Text
   sceneClasses:
     Assets/_Scenes/SampleScene.unity:
     - Class: 1
@@ -54,20 +63,46 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11492}
+      Script: {instanceID: 11148}
     - Class: 114
-      Script: {instanceID: 11846}
+      Script: {instanceID: 11302}
     - Class: 114
-      Script: {instanceID: 12856}
+      Script: {instanceID: 11514}
+    - Class: 114
+      Script: {instanceID: 11722}
+    - Class: 114
+      Script: {instanceID: 11868}
+    - Class: 114
+      Script: {instanceID: 12190}
+    - Class: 114
+      Script: {instanceID: 12542}
+    - Class: 114
+      Script: {instanceID: 12880}
+    - Class: 114
+      Script: {instanceID: 12884}
+    - Class: 114
+      Script: {instanceID: 19850}
+    - Class: 114
+      Script: {instanceID: 22564}
     - Class: 115
       Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
     - Class: 134
+      Script: {instanceID: 0}
+    - Class: 135
       Script: {instanceID: 0}
     - Class: 136
       Script: {instanceID: 0}
     - Class: 137
       Script: {instanceID: 0}
     - Class: 157
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
       Script: {instanceID: 0}
     - Class: 258
       Script: {instanceID: 0}
@@ -194,7 +229,7 @@ ScriptsOnlyBuild:
     className: AnimationTrack
   - hash:
       serializedVersion: 2
-      Hash: 0bb227d3ff815d2b395f852a50156443
+      Hash: ab3b69439f70c13ef5a0ace728e9626b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
@@ -324,6 +359,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: VerticalLayoutGroup
+  - hash:
+      serializedVersion: 2
+      Hash: 504977b5d0efc17e600c48f3435a18c4
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LevelGenerator
   - hash:
       serializedVersion: 2
       Hash: 783f593b9380cf72d0f7ebfd4a0d4bcd
@@ -510,6 +551,18 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: afc5b93a7b192de2dcb3832fe35a5c7e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SawRotate
+  - hash:
+      serializedVersion: 2
+      Hash: 5e851a554f837b980f1f58f73c496494
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GameManager
   platform: 13
   scenePathNames:
   - Assets/_Scenes/SampleScene.unity
