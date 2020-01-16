@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 8148157525629064265}
   - component: {fileID: 886950356419145343}
   - component: {fileID: 6878014560038490758}
-  - component: {fileID: 3182844913033512987}
-  - component: {fileID: 6038536977220417670}
+  - component: {fileID: 8083828415638188411}
+  - component: {fileID: 3527777797029461598}
   m_Layer: 0
   m_Name: O_CircSaw_01
   m_TagString: Obstacle
@@ -81,7 +81,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &3182844913033512987
+--- !u!135 &8083828415638188411
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,7 +94,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.51445615
   m_Center: {x: -0.000000014901161, y: -0.000000029802322, z: 0}
---- !u!114 &6038536977220417670
+--- !u!114 &3527777797029461598
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -103,7 +103,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5138408994949113434}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad1187c0ea4109f4d8b5340cc1156983, type: 3}
+  m_Script: {fileID: 11500000, guid: bc7e87dc0ef252a49995b84ebb17cfc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 350
+  rotationSpeed: 350

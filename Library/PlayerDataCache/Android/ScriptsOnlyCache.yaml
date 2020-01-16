@@ -6,7 +6,7 @@ ScriptsOnlyBuild:
     - LevelGenerator
     - PlayerController
     - RegisterSwipe
-    - SawRotate
+    - Rotate
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
@@ -63,27 +63,27 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11148}
+      Script: {instanceID: 11126}
     - Class: 114
-      Script: {instanceID: 11302}
+      Script: {instanceID: 11280}
     - Class: 114
-      Script: {instanceID: 11514}
+      Script: {instanceID: 11492}
     - Class: 114
-      Script: {instanceID: 11722}
+      Script: {instanceID: 11700}
     - Class: 114
-      Script: {instanceID: 11868}
+      Script: {instanceID: 11846}
     - Class: 114
-      Script: {instanceID: 12190}
+      Script: {instanceID: 12168}
     - Class: 114
-      Script: {instanceID: 12542}
+      Script: {instanceID: 12520}
     - Class: 114
-      Script: {instanceID: 12880}
+      Script: {instanceID: 12858}
     - Class: 114
-      Script: {instanceID: 12884}
+      Script: {instanceID: 12862}
     - Class: 114
-      Script: {instanceID: 19850}
+      Script: {instanceID: 14078}
     - Class: 114
-      Script: {instanceID: 22564}
+      Script: {instanceID: 14276}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -229,7 +229,7 @@ ScriptsOnlyBuild:
     className: AnimationTrack
   - hash:
       serializedVersion: 2
-      Hash: ab3b69439f70c13ef5a0ace728e9626b
+      Hash: f9842053caf6641d67bf250618d043d2
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
@@ -361,7 +361,7 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: 504977b5d0efc17e600c48f3435a18c4
+      Hash: 05d3cc4b2acd7b46c02b0a6fd7bd1c11
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: LevelGenerator
@@ -553,16 +553,16 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: afc5b93a7b192de2dcb3832fe35a5c7e
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: SawRotate
-  - hash:
-      serializedVersion: 2
-      Hash: 5e851a554f837b980f1f58f73c496494
+      Hash: 8b5f11caadf59dfb52450484dc573acb
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
+  - hash:
+      serializedVersion: 2
+      Hash: 3f7d3eac3468685ef18425a40cd5b891
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Rotate
   platform: 13
   scenePathNames:
   - Assets/_Scenes/SampleScene.unity

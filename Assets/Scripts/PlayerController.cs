@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
-    public GameManager gm;
+    public LevelGenerator lg;
     [Space]
     public float movementForce;
     public float maxFallVelocity;
@@ -56,9 +56,8 @@ public class PlayerController : MonoBehaviour
     {
         if(other.CompareTag("End"))
         {
-            PlayerPrefs.SetInt("Number", gm.currentLevel + 1);
+            PlayerPrefs.SetInt("level", lg.currentLevel + 1);
             SceneManager.LoadScene(0);
         }
     }
-
 }

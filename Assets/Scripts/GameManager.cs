@@ -4,12 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
-    public Text levelNum;
-    public int currentLevel;
-    void Start()
+    public LevelGenerator lg;
+    public Text levelNumberText;
+    // Start is called before the first frame update
+    private IEnumerator Start()
     {
-        currentLevel = PlayerPrefs.GetInt("Number", 1);
-        levelNum.text = "Level " + currentLevel.ToString();
+        yield return new WaitForEndOfFrame();
+        levelNumberText.text = "Level " + lg.currentLevel.ToString();
     }
 
     // Update is called once per frame

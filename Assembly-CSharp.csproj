@@ -67,7 +67,7 @@
     <Compile Include="Assets\Scripts\LevelGenerator.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\RegisterSwipe.cs" />
-    <Compile Include="Assets\Scripts\SawRotate.cs" />
+    <Compile Include="Assets\Scripts\Rotate.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>F:/Unity Projects/TestFall WORK/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

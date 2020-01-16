@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4667210427251920494}
   - component: {fileID: 4667210427251920495}
   - component: {fileID: 4667210427251920480}
-  - component: {fileID: 7200303243143240512}
+  - component: {fileID: -7597672969949433313}
   m_Layer: 0
   m_Name: WallSegmentTEMP
   m_TagString: Untagged
@@ -80,7 +80,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &7200303243143240512
+--- !u!65 &-7597672969949433313
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
