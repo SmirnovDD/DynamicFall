@@ -9,7 +9,7 @@ public class LevelGenerator : MonoBehaviour
     public Transform wallSegmentsHolder;
 
     [Space]
-    public GameObject obstacleCubePrefab;
+    public GameObject[] obstacles;
     public Transform obstaclesHolder;
     public int firstObstaclePosition = -8;
     public int distanceBetweenObstacles = 5;
@@ -54,8 +54,9 @@ public class LevelGenerator : MonoBehaviour
             if(i % 10 == 0)
             {
                 float randomPosX = Random.Range(minObstaclePosX, maxObstaclePosX);
-                Transform newCubeObstacle = Instantiate(obstacleCubePrefab, new Vector3(randomPosX, firstObstaclePosition - i / 2, 0), Quaternion.identity).transform;
-                newCubeObstacle.parent = obstaclesHolder;
+                int randomObstacle = Random.Range(0, obstacles.Length);
+                Transform newObstacle = Instantiate(obstacles[randomObstacle], new Vector3(randomPosX, firstObstaclePosition - i / 2, 0), Quaternion.identity).transform;
+                newObstacle.parent = obstaclesHolder;
             }
         }
     }
@@ -67,11 +68,14 @@ public class LevelGenerator : MonoBehaviour
 
     private void InstantiateBackground()
     {
+        Transform firstBg = Instantiate(background, new Vector3(0, 7.5f, 0.5f), Quaternion.identity).transform;
+        firstBg.parent = backgroundHolder;
+
         for (int i = 0; i < wallSegmentsCount + 15; i++)
         {
             if(i % 15 == 0)
             {
-                Transform newBg = Instantiate(background, new Vector3(0, -0.5f * i, 0.14f), Quaternion.identity).transform;
+                Transform newBg = Instantiate(background, new Vector3(0, -0.5f * i, 0.5f), Quaternion.identity).transform;
                 newBg.parent = backgroundHolder;
             }
         }

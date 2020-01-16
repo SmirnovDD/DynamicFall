@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 2378659579072394920}
   - component: {fileID: 6654548900638067870}
   - component: {fileID: 1109360625826689127}
+  - component: {fileID: 7680727955256543783}
   m_Layer: 0
   m_Name: O_Boiler_01
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79,3 +80,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &7680727955256543783
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1682634940508161211}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.2577424, y: 0.99064183, z: 1.8242737}
+  m_Center: {x: 0.003941536, y: 0.32095766, z: 0.27540892}
