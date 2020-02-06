@@ -4,14 +4,25 @@ ScriptsOnlyBuild:
     - CameraFollow
     - GameManager
     - LevelGenerator
+    - MoveHorisontally
     - PlayerController
+    - PreventRotation
     - RegisterSwipe
     - Rotate
+    - SwordThrow
+    Unity.TextMeshPro.dll:
+    - TMPro.TMP_FontAsset
+    - TMPro.TMP_Settings
+    - TMPro.TMP_SpriteAsset
+    - TMPro.TMP_StyleSheet
+    - TMPro.TextMeshProUGUI
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -21,7 +32,6 @@ ScriptsOnlyBuild:
     - UnityEngine.EventSystems.StandaloneInputModule
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
-    - UnityEngine.UI.Text
   sceneClasses:
     Assets/_Scenes/SampleScene.unity:
     - Class: 1
@@ -42,6 +52,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 49
+      Script: {instanceID: 0}
     - Class: 54
       Script: {instanceID: 0}
     - Class: 65
@@ -58,32 +70,50 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 95
       Script: {instanceID: 0}
+    - Class: 96
+      Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 108
       Script: {instanceID: 0}
+    - Class: 109
+      Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11126}
+      Script: {instanceID: 11150}
     - Class: 114
-      Script: {instanceID: 11280}
+      Script: {instanceID: 11516}
     - Class: 114
-      Script: {instanceID: 11492}
+      Script: {instanceID: 11724}
     - Class: 114
-      Script: {instanceID: 11700}
+      Script: {instanceID: 11744}
     - Class: 114
-      Script: {instanceID: 11846}
+      Script: {instanceID: 11870}
     - Class: 114
-      Script: {instanceID: 12168}
+      Script: {instanceID: 12192}
     - Class: 114
-      Script: {instanceID: 12520}
+      Script: {instanceID: 12298}
     - Class: 114
-      Script: {instanceID: 12858}
+      Script: {instanceID: 12312}
     - Class: 114
-      Script: {instanceID: 12862}
+      Script: {instanceID: 12346}
     - Class: 114
-      Script: {instanceID: 14078}
+      Script: {instanceID: 12486}
     - Class: 114
-      Script: {instanceID: 14276}
+      Script: {instanceID: 12538}
+    - Class: 114
+      Script: {instanceID: 12548}
+    - Class: 114
+      Script: {instanceID: 12598}
+    - Class: 114
+      Script: {instanceID: 12692}
+    - Class: 114
+      Script: {instanceID: 12888}
+    - Class: 114
+      Script: {instanceID: 12892}
+    - Class: 114
+      Script: {instanceID: 12930}
+    - Class: 114
+      Script: {instanceID: 19412}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -97,6 +127,10 @@ ScriptsOnlyBuild:
     - Class: 137
       Script: {instanceID: 0}
     - Class: 157
+      Script: {instanceID: 0}
+    - Class: 198
+      Script: {instanceID: 0}
+    - Class: 199
       Script: {instanceID: 0}
     - Class: 222
       Script: {instanceID: 0}
@@ -229,7 +263,7 @@ ScriptsOnlyBuild:
     className: AnimationTrack
   - hash:
       serializedVersion: 2
-      Hash: f9842053caf6641d67bf250618d043d2
+      Hash: 5bbe7f0c1fe92058542b4fc71119c20d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
@@ -361,7 +395,7 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: 05d3cc4b2acd7b46c02b0a6fd7bd1c11
+      Hash: f46175921c8129e4015f76d6acd9af81
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: LevelGenerator
@@ -409,6 +443,12 @@ ScriptsOnlyBuild:
     className: Physics2DRaycaster
   - hash:
       serializedVersion: 2
+      Hash: afc5b93a7b192de2dcb3832fe35a5c7e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MoveHorisontally
+  - hash:
+      serializedVersion: 2
       Hash: c1933cc0a2f4ff6eb13333347497beb3
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -427,6 +467,12 @@ ScriptsOnlyBuild:
     className: AudioTrack
   - hash:
       serializedVersion: 2
+      Hash: 0a9599f17b21b1e58a069033bae7d6f6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GameManager
+  - hash:
+      serializedVersion: 2
       Hash: ae83e830e7a90c0aff918c4c2e520825
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -437,6 +483,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools
     className: BeforeAfterTestCommandState
+  - hash:
+      serializedVersion: 2
+      Hash: 3f7d3eac3468685ef18425a40cd5b891
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Rotate
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -541,6 +593,12 @@ ScriptsOnlyBuild:
     className: Slider
   - hash:
       serializedVersion: 2
+      Hash: e67abc08da5d3aecaca7b711bce51052
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SwordThrow
+  - hash:
+      serializedVersion: 2
       Hash: 0fd6822f6177297bd0eb4d83cc7a9030
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -553,16 +611,10 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: 8b5f11caadf59dfb52450484dc573acb
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: GameManager
-  - hash:
-      serializedVersion: 2
-      Hash: 3f7d3eac3468685ef18425a40cd5b891
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Rotate
+    className: PreventRotation
   platform: 13
   scenePathNames:
   - Assets/_Scenes/SampleScene.unity

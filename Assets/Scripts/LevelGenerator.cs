@@ -6,6 +6,9 @@ public class LevelGenerator : MonoBehaviour
 {
     public float wallSegmentsCount;
     public GameObject wallSegmentPrefab;
+    public GameObject swordWallSegmentPrefab;
+    public GameObject spikyWallLeft, spikyWallRight;
+    public GameObject swordPrefab;
     public Transform wallSegmentsHolder;
 
     [Space]
@@ -25,11 +28,17 @@ public class LevelGenerator : MonoBehaviour
 
     [HideInInspector]
     public int currentLevel;
+
+    private string trapsOnLevel;
+    private List<string> tempObstaclesList = new List<string>();
+    private string[] tempTrapsOnLevel = new string[0];
     // Start is called before the first frame update
     void Start()
     {
         currentLevel = PlayerPrefs.GetInt("level", 1);
         wallSegmentsCount += currentLevel;
+
+        trapsOnLevel = PlayerPrefs.GetString("trapsOnLevels", "");
 
         InstantiateWalls();
         InstantiateObstacles();
@@ -41,8 +50,26 @@ public class LevelGenerator : MonoBehaviour
     {
         for (int i = 0; i < wallSegmentsCount; i++)
         {
-            Transform wallSegmentRight = Instantiate(wallSegmentPrefab, new Vector3(3.25f, -0.5f * i, 0), Quaternion.identity).transform;
-            Transform wallSegmentLeft = Instantiate(wallSegmentPrefab, new Vector3(-3.25f, -0.5f * i, 0), Quaternion.identity).transform;
+            Transform wallSegmentRight;
+            Transform wallSegmentLeft;
+
+            if (i % 7 == 0 && Random.Range(0, 101) > 90 && i < wallSegmentsCount - 5)
+            {
+                wallSegmentRight = Instantiate(swordWallSegmentPrefab, new Vector3(3.25f, -0.5f * i, -0.2f), Quaternion.identity).transform;
+                wallSegmentLeft = Instantiate(swordWallSegmentPrefab, new Vector3(-3.25f, -0.5f * i, -0.2f), Quaternion.identity).transform;
+                wallSegmentLeft.GetComponent<SwordThrow>().sword = swordPrefab;
+            }
+            else if(Random.Range(0, 101) > 80 && i < wallSegmentsCount - 5)
+            {
+                wallSegmentRight = Instantiate(spikyWallRight, new Vector3(3.25f, -0.5f * i, 0), Quaternion.identity).transform;
+                wallSegmentLeft = Instantiate(spikyWallLeft, new Vector3(-3.25f, -0.5f * i, 0), Quaternion.identity).transform;
+            }
+            else
+            {
+                wallSegmentRight = Instantiate(wallSegmentPrefab, new Vector3(3.25f, -0.5f * i, 0), Quaternion.identity).transform;
+                wallSegmentLeft = Instantiate(wallSegmentPrefab, new Vector3(-3.25f, -0.5f * i, 0), Quaternion.identity).transform;
+            }
+
             wallSegmentRight.parent = wallSegmentLeft.parent = wallSegmentsHolder;
         }
     }
@@ -55,15 +82,60 @@ public class LevelGenerator : MonoBehaviour
             {
                 float randomPosX = Random.Range(minObstaclePosX, maxObstaclePosX);
                 int randomObstacle = Random.Range(0, obstacles.Length);
-                Transform newObstacle = Instantiate(obstacles[randomObstacle], new Vector3(randomPosX, firstObstaclePosition - i / 2, 0), Quaternion.identity).transform;
+
+                Transform newObstacle;
+
+                if (trapsOnLevel.Length == 0)
+                {
+                    //int obstacleIndexFromString = i / 10;
+
+                    tempObstaclesList.Add(randomObstacle.ToString());
+                    if (randomObstacle == 1) //BOILER
+                    {
+                        randomPosX = Random.Range(minObstaclePosX / 1.1f, maxObstaclePosX / 1.1f);
+                        newObstacle = Instantiate(obstacles[randomObstacle], new Vector3(randomPosX, firstObstaclePosition - i / 2, 0), Quaternion.identity).transform;
+                    }
+                    else if (randomObstacle == 2) //LASER
+                    {
+                        randomPosX = Random.Range(minObstaclePosX / 1.5f, maxObstaclePosX / 1.5f);
+                        newObstacle = Instantiate(obstacles[randomObstacle], new Vector3(randomPosX, firstObstaclePosition - i / 2, 0), Quaternion.identity).transform;
+                    }
+                    else if (randomObstacle == 3) //SPIKY BOX
+                    {
+                        randomPosX = Random.Range(minObstaclePosX / 1.5f, maxObstaclePosX / 1.5f);
+                        newObstacle = Instantiate(obstacles[randomObstacle], new Vector3(randomPosX, firstObstaclePosition - i / 2, 0), Quaternion.identity).transform;
+                    }
+                    else
+                        newObstacle = Instantiate(obstacles[randomObstacle], new Vector3(randomPosX, firstObstaclePosition - i / 2, 0), Quaternion.identity).transform;
+
+                    tempObstaclesList.Add(newObstacle.transform.position.x.ToString());
+                }
+                else
+                {
+                    tempTrapsOnLevel = trapsOnLevel.Split('|');
+                    int obstacleIndexFromString = i / 10;
+                    randomObstacle = int.Parse(tempTrapsOnLevel[obstacleIndexFromString * 2].ToString());
+                    newObstacle = Instantiate(obstacles[randomObstacle], new Vector3(float.Parse(tempTrapsOnLevel[(obstacleIndexFromString * 2) + 1].ToString()), firstObstaclePosition - i / 2, 0), Quaternion.identity).transform;
+                }
+
                 newObstacle.parent = obstaclesHolder;
             }
         }
+        if (trapsOnLevel.Length == 0)
+        {
+            tempTrapsOnLevel = new string[tempObstaclesList.Count];
+            for(int i = 0; i < tempTrapsOnLevel.Length; i++)
+            {
+                tempTrapsOnLevel[i] = tempObstaclesList[i];
+            }
+            trapsOnLevel = string.Join("|", tempTrapsOnLevel);
+        }
+        PlayerPrefs.SetString("trapsOnLevels", trapsOnLevel);
     }
 
     private void InstantiateFloor()
     {
-        Instantiate(floor, new Vector3(0, -wallSegmentsCount / 2 - 0.15f, 0), Quaternion.identity);
+        Instantiate(floor, new Vector3(0, -wallSegmentsCount / 2 - 0.12f, 0), Quaternion.identity);
     }
 
     private void InstantiateBackground()
@@ -81,3 +153,6 @@ public class LevelGenerator : MonoBehaviour
         }
     }
 }
+// 0    1    2     3    4    5     6     7
+//[1],[0.2],[3],[2.24],[4],[2.1], [2], [1.1]
+// 0         1          2          3
